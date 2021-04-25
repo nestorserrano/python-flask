@@ -60,14 +60,14 @@
     <tbody>
       {% for nomina in nominas %}
         <tr>
-          <td>{{ nomina.0 }}</td>
-          <td>{{ nomina.1 }}</td>
-          <td>{{ nomina.2 }}</td>
-          <td>{{ nomina.3 }}</td>
-          <td>{{ nomina.4 }}</td>
+          <td>{{ nomina.cedula }}</td>
+          <td>{{ nomina.fullname }}</td>
+          <td>{{ nomina.sueldobas }}</td>
+          <td>{{ nomina.bono }}</td>
+          <td>{{ nomina.sueldobas + nomina.bono }}</td>
           <td>
-            <a href="/edit/{{nomina.0}}" class="btn btn-secondary">Edit</a>
-            <a href="/delete/{{nomina.0}}" class="btn btn-danger btn-delete">Delete</a>
+            <a href="/edit/{{nomina.cedula}}" class="btn btn-secondary">Edit</a>
+            <a href="/delete/{{nomina.cedula}}" class="btn btn-danger btn-delete">Delete</a>
           </td>
         </tr>
       {% endfor %}  
