@@ -4,7 +4,7 @@ if(btnDelete) {
   const btnArray = Array.from(btnDelete);
   btnArray.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      if(!confirm('estas seguro que quieres eliminar el contacto?')){
+      if(!confirm('Are you sure you want to delete this Contact?')){
         e.preventDefault();
       }
     });

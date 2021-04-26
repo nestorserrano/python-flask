@@ -31,7 +31,7 @@ class Nomina(db.Model):
 
     def validate_cedula(self, field):
         if Nomina.query.filter_by(cedula=field.data).first():
-            raise ValidationError('Cedula is already in use.')
+            raise ValidationError('ID is already in use.')
 
 
     def __init__(self,cedula,fullname,sueldobas,bono):
@@ -62,7 +62,7 @@ def addcontact():
         new_contact = Nomina(cedula=cedula, fullname=fullname,sueldobas=sueldobas,bono=bono)
         db.session.add(new_contact)
         db.session.commit()
-        flash('Contacto agregado satisfactoriamente')
+        flash('Contact successfully added')
         return redirect(url_for('index'))
     elif request.method == 'GET':    
         data = Nomina.query.all()
@@ -76,7 +76,7 @@ def addcontact():
 
             } for nomina in data]
 
-        return {"count": len(results), "Contactos": results}
+        return {"Count": len(results), "Contacts": results}
 
 @app.route('/edit/<cedula>')
 def get_contact(cedula):
@@ -96,17 +96,17 @@ def update_contact(cedula):
         data.bono = request.form['bono']            
         db.session.query(Nomina).get(cedula)
         db.session.commit()
-        flash('Contacto modificado satisfactoriamente')
+        flash('Contact successfully modified')
         return redirect(url_for('index'))
 
 @app.route('/delete/<cedula>', methods=['GET','POST'])
 def delete_contact(cedula):
     data = Nomina.query.filter_by(cedula=cedula).first()
-    if request.method == 'POST':
+    if request.method == 'GET':
         if data:
             db.session.delete(data)
             db.session.commit()
             return redirect(url_for('index'))
         abort(404)
-    flash('Contacto eliminado satisfactoriamente')
-    return render_template('delete.html')
+    flash('Contact successfully removed')
+    return redirect(url_for('index'))

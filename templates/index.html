@@ -21,24 +21,24 @@
     <div class="card card-body">
       <form action="/agregar" method="POST">
         <div class="form-group">
-          <input type="text" name="cedula" placeholder="cedula" class="form-control">
+          <input type="text" name="cedula" placeholder="Card ID" class="form-control">
         </div>
 
         <div class="form-group">
-          <input type="text" name="fullname" placeholder="fullname" class="form-control">
+          <input type="text" name="fullname" placeholder="Full Name" class="form-control">
         </div>
         
         <div class="form-group">
-          <input type="text" name="sueldobas" placeholder="sueldoBase" class="form-control">
+          <input type="text" name="sueldobas" placeholder="Base salary" class="form-control">
         </div>
        
         <div class="form-group">
-          <input type="text" name="bono" placeholder="bono" class="form-control">
+          <input type="text" name="bono" placeholder="Extra Salary" class="form-control">
         </div>
         
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">
-              Guardar
+              SAVE
             </button>
         </div>
         
@@ -49,12 +49,12 @@
    <table class="table table-striped table-hover table-bordered table-sm bg-white">
     <thead>
       <tr>
-        <td>Cedula</td>
-        <td>Nombre</td>
-        <td>sueldo base</td>
-        <td>bono</td>
-        <td>sueldo Total</td>
-        <td>Operaciones</td>
+        <td>Card ID</td>
+        <td>Name</td>
+        <td>Salary</td>
+        <td>Extras</td>
+        <td>Total</td>
+        <td>Record Tools</td>
       </tr>
     </thead>
     <tbody>
@@ -66,8 +66,8 @@
           <td>{{ nomina.bono }}</td>
           <td>{{ nomina.sueldobas + nomina.bono }}</td>
           <td>
-            <a href="/edit/{{nomina.cedula}}" class="btn btn-secondary">Edit</a>
-            <a href="/delete/{{nomina.cedula}}" class="btn btn-danger btn-delete">Delete</a>
+            <a href="/edit/{{nomina.cedula}}" class="btn btn-secondary">EDIT</a>
+            <a href="/delete/{{nomina.cedula}}" class="btn btn-danger btn-delete">DELETE</a>
           </td>
         </tr>
       {% endfor %}  
