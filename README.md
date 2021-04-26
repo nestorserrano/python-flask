@@ -1,5 +1,4 @@
 
-
 -----
 ![Python](https://logodownload.org/wp-content/uploads/2019/10/python-logo-1.png)
 *****
@@ -174,11 +173,7 @@ Se crea el Archivo requirements.txt con la informacion del comando freeze dentro
 
 Verficar que el archivo **requirements.txt** solo contenga las librerias y dependencias que se usaran en nuestro proyecto ya que puede generar errores en **Heroku** si el archivo de requerimientos trae todas las dependencias de Python Global
 
-# Instalar PostgreSQL Localmente, crear base de datos y crear tabla
-
-> Se puede crear una migración desde la misma aplicación pero este manual permite al usuario aprender tecnicas básicas para crear bases de datos por consola
-
-# Instalar Postgres, crear Super Usuario y crear la base de datos:
+# Instalar  PostgreSQL Localmente, crear Super Usuario y crear la base de datos:
 
 ```sh
 (venv) $ sudo apt-get install postgresql postgresql-contrib # Instalar Postgres
@@ -299,5 +294,4 @@ MIT
 **Free Software, Hell Yeah!**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
 
