@@ -80,11 +80,15 @@ Seleccionamos desde la ventana que aparece el Add-ons **Heroku Postgres**
 
 Automaticamente nos crea una base de datos y nos da la configuración en el menú **Settings** al seleccionar **Heroku Postgres** en la lista de los **Add-ons**
 
-Tambien se puede crear por consola la base de datos. Para esta práctica se creó desde la página de Heroku
+Tambien se puede crear por consola la base de datos. Para esta práctica se creó desde la página de Heroku, para efectos académicos por consola puede agregar el Add-ons utilizando el siguiente comando:
 
-> Regresando a la Consola de Ubuntu 
+```sh
+(venv) $  heroku addons:create heroku-postgresql:hobby-dev --app app_name
+```
 
 # Conectarse con Heroku
+
+> Regresando a la Consola de Ubuntu 
 
 Instalar Cliente:
 
@@ -267,6 +271,23 @@ El valor obtenido se utilizará en la variable de la aplicación python **app.py
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'cualquierclave'    
 ```
+
+## Referencias
+
+[Heroku: Deploy your Flask App with a Database Online](https://medium.com/analytics-vidhya/heroku-deploy-your-flask-app-with-a-database-online-d19274a7a749 "Heroku: Deploy your Flask App with a Database Online")
+
+[Pipenv & Ambientes Virtuales](https://python-guide-es.readthedocs.io/es/latest/dev/virtualenvs.html#virtualenvironments-ref "Pipenv & Ambientes Virtuales")
+
+[Build a CRUD Web App With Python and Flask - Part One](https://www.digitalocean.com/community/tutorials/build-a-crud-web-app-with-python-and-flask-part-one "Build a CRUD Web App With Python and Flask - Part One")
+
+[How do I switch branches from master to main?](https://help.heroku.com/O0EXQZTA/how-do-i-switch-branches-from-master-to-main "How do I switch branches from master to main?")
+
+[The Heroku CLI
+](https://devcenter.heroku.com/articles/heroku-cli "The Heroku CLI
+")
+
+[Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/ "Flask-SQLAlchemy")
+
 ## Licencia
 
 MIT
@@ -274,4 +295,3 @@ MIT
 **Free Software, Hell Yeah!**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
