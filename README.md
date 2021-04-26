@@ -111,7 +111,7 @@ heroku/7.52.0 linux-x64 node-v12.21.0 # Versión que está instalada
 
 ```sh
 (venv) $ heroku git:clone -a <YourAppHeroku>
-(venv) $ cd <YourApp> # Entramos al Directorio de Trabajo de nuestra aplicación vacía
+(venv) $ cd <YourAppHeroku> # Entramos al Directorio de Trabajo de nuestra aplicación vacía
 ```
 
 Git trae la Rama **master** por defecto pero Heroku trabaja con la rama **main**, a continuación los comandos para crear la rama **main** y eliminar la rama **master** en Git local
@@ -247,16 +247,22 @@ Si por alguna razón creó la base de datos y las tablas por consola en heroku p
 
 ```
 
-# Ejecutar localmente el Programa:
+# Ejecutar localmente el Programa (Para hacer pruebas antes de enviar a Heroku):
 
 ```sh
 (venv) $ FLASK_ENV=development flask run
+Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 999-999-999
 ```
 
 # Por último se obtiene la cadena de conexión de la base de datos
 
 ```sh
-(venv) $ heroku config --app nomina2021
+(venv) $ heroku config --app <YourAppHeroku>
 ```
 
 El valor obtenido se utilizará en la variable de la aplicación python **app.py** 
